@@ -5,10 +5,10 @@ import './NameListItem.css';
 
 function NameListItem(props) {
     return (
-        <li className='list-group-item'>
-            <div className="row">
+        <li className='list-group-item shadow-sm'>
+            <div className="row align-items-center">
                 <div className='col-sm'>
-                    <img src={props.avatar} alt={props.name} />
+                    <img src={props.avatar} alt={props.name} className="border border-dark rounded-circle shadow-sm" />
                 </div>
             <div className='col-sm'>
             <h3> {props.name}</h3>
