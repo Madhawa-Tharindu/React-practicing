@@ -63,8 +63,9 @@ const nameListComponent = () => {
 };
     return (
         <React.Fragment>
+        
         <div className="container-fluid mt-4">
-        <ul>
+        <ul className="list-group">
     {nameListComponent()}
       
   </ul>
