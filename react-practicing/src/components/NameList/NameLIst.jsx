@@ -63,12 +63,13 @@ const nameListComponent = () => {
 };
     return (
         <React.Fragment>
-    <h1> Name List </h1>
-    <hr />        
- <ul>
+        <div className="container-fluid mt-4">
+        <ul>
     {nameListComponent()}
       
   </ul>
+          </div>    
+ 
         </React.Fragment>
     );
   
