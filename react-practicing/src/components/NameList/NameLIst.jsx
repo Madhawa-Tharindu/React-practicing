@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect} from 'react';
 
 import NameListItem from './NameListItem';
 
 function Namelist(){
+  const [loadData, setloadData] = useState(new Date);
   const [nameList, setNameList] = useState([{
     "id": 2,
     "name": {
@@ -25,7 +26,7 @@ function Namelist(){
   },
 },
 {
-"id": 1,    
+"id": new Date(),    
 "name": {
     "title": "Miss",
     "first": "Jennie",
@@ -45,7 +46,14 @@ function Namelist(){
     //"thumbnail": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
   }, 
 }
-]);
+]);useEffect(() => {
+  fetch("https://randomuser.me/api").then(response => {
+    return response.json();
+  })
+  .then(responseData => {
+    setNameList((nameList) => [...nameList, responseData.results[0]]);
+  });
+},[loadData]);
 
 
 
@@ -64,34 +72,11 @@ const nameListComponent = () => {
 };
 
 const addUserHandler = () => {
-  const newUser = {
-    
-      "id": 1,    
-      "name": {
-        "title":"Miss",
-        "first":"Pallavi",
-        "last":"Namnaik"
-        },
-        "location": {
-          "city": "Billings",
-        },
-        "email": "jennie.nichols@example.com", 
-        "dob": {
-          "date": "1992-03-08T15:13:16.688Z",
-          "age": 30
-        },
-        "picture": {
-          //"large": "https://randomuser.me/api/portraits/men/75.jpg",
-          "medium":"https://randomuser.me/api/portraits/med/women/37.jpg"
-          //"thumbnail": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
-        },
-
-  };
+      setloadData(new Date);
+};
   //setNameList((nameList) => nameList.concat(newUser));
   //spread operater
 
-  setNameList((nameList) => [...nameList, newUser]);
-};
     return (
         <React.Fragment>
         
