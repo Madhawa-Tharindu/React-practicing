@@ -82,7 +82,7 @@ const addUserHandler = () => {
         
         <div className="container-fluid mt-4">
         <ul className="list-group">
-          <button className='btn btn-primary mb-2' onClick={addUserHandler}>Add Name</button>
+          <button className='btn btn-primary mb-2' onClick={addUserHandler}>GENERATE A NEW USER</button>
     {nameListComponent()}
       
   </ul>
