@@ -1,2 +1,2 @@
 # React-practicing
-This repository created for practicing a react.
+This repository was created for practicing REACT.
